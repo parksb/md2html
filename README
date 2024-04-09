@@ -1,0 +1,11 @@
+Usage: typeset [FILE] [-o FILE] [-t NAME]
+
+Options:
+      --version   Show version number                                  [boolean]
+  -o, --output    Output file path                                      [string]
+  -t, --template  Template name                    [string] [default: "default"]
+      --help      Show help                                            [boolean]
+
+Examples:
+  typeset input.md -o output.html       Convert input.md to output.html.
+  cat input.md | typeset > output.html  Convert input.md to output.html.

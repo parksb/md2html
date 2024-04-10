@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "mkdir -p bin && esbuild index.ts --outfile=bin/md2html --platform=node --format=iife --bundle --minify",
-    "lint:type": "tsc --noEmit"
+    "lint:type": "tsc --noEmit",
+    "test": "exit 0"
   },
   "keywords": [],
   "author": "parksb <parkgds@gmail.com>",
@@ -42,5 +43,8 @@
     "@types/markdown-it": "^14.0.0",
     "@types/node": "^20.12.6",
     "@types/yargs": "^17.0.32"
+  },
+  "publishConfig": {
+    "@parksb:registry": "https://npm.pkg.github.com"
   }
 }

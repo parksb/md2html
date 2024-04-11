@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title><%- document.title %></title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" as="style">
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Noto+Serif+KR&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+  <style>
+    body { max-width: 900px; padding: 30px; word-break: keep-all; line-height: 1.7; font-family: 'Noto Serif KR', serif; font-size: 16px; }
+    h1, h2, h3, h4, h5, h6 { font-weight: 800; }
+    h1 { font-size: 1.6em; border-bottom: 1px solid #000000; }
+    h2 { font-size: 1.4em; }
+    h3 { font-size: 1.2em; }
+    h4, h5, h6 { font-size: 1em; }
+    img { box-sizing: initial; width: auto; height: auto; max-width: min(100%, 800px); max-height: 600px; display: block; margin: 0; }
+    ol, ul { padding-left: 2em; }
+    ol ol, ol ul, ul ol, ul ul { margin: 0; }
+    ul > li, ol > li { line-height: 1.7; }
+    a { color: #0366d6; text-decoration: none; }
+    a:hover { outline-width: 0; text-decoration: underline; }
+    small { font-size: 85%; color: #6a737d; font-weight: normal; }
+    h1 > code, h2 > code, li > code,  p > code { margin: 0; font-size: 90%; }
+    blockquote { margin: 5px 0 0 0; padding: 0 15px; color: #6a737d; border-left: .25em solid #dfe2e5; }
+    blockquote > p { margin: 0; }
+    table { border-spacing: unset; border-collapse: collapse; margin: 0 0 1em 0; }
+    th, td { padding: 5px 10px 5px 10px; border: 1px black solid; line-height: 1.3; }
+    code { font-family: 'Fira Code', monospace; }
+    .katex { font-size: 1em; }
+    .katex-display { overflow: visible; }
+    .katex-display > .katex { text-align: left; }
+    .hljs { line-height: 1.5; }
+    .footnotes > .footnotes-list { padding: 0; counter-reset: list; font-size: 14px; }
+    .footnotes > .footnotes-list > .footnote-item { list-style-position: inherit; list-style: none; }
+    .footnotes > .footnotes-list > .footnote-item:before { content: "[" counter(list) "] "; counter-increment: list; }
+    .footnotes > .footnotes-list > .footnote-item > p { display: inline; }
+    details > p { margin: 0; }
+    details[open=""] > p { border-left: black 1px solid; padding-left: 15px; margin-left: 3.5px; }
+    summary { cursor: pointer; }
+  </style>
+</head>
+
+<body>
+  <%- document.html %>
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    mermaid.initialize({ startOnLoad: true });
+  </script>
+</body>
+

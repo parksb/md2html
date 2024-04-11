@@ -43,10 +43,10 @@ const md: MarkdownIt = new MarkdownIt({
 })
 .use(mdAnchor)
 .use(mdContainer, 'TOGGLE', {
-  validate(params) {
+  validate(params: any) {
     return params.trim().match(/^TOGGLE\s+(.*)$/);
   },
-  render(tokens, idx) {
+  render(tokens: any[], idx: number) {
     const content = tokens[idx].info.trim().match(/^TOGGLE\s+(.*)$/);
     if (tokens[idx].nesting === 1) {
       return `<details><summary>${md.utils.escapeHtml(content[1])}</summary>\n`;

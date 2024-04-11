@@ -50,9 +50,6 @@ dependencies:
   markdown-it-texmath:
     specifier: ^1.0.0
     version: 1.0.0
-  typescript:
-    specifier: ^5.4.4
-    version: 5.4.4
   yargs:
     specifier: ^17.7.2
     version: 17.7.2
@@ -73,6 +70,9 @@ devDependencies:
   '@types/yargs':
     specifier: ^17.0.32
     version: 17.0.32
+  typescript:
+    specifier: ^5.4.4
+    version: 5.4.4
 
 packages:
 
@@ -687,7 +687,7 @@ packages:
     resolution: {integrity: sha512-dGE2Vv8cpVvw28v8HCPqyb08EzbBURxDpuhJvTrusShUfGnhHBafDsLdS1EhhxyL6BJQE+2cT3dDPAv+MQ6oLw==}
     engines: {node: '>=14.17'}
     hasBin: true
-    dev: false
+    dev: true
 
   /uc.micro@2.1.0:
     resolution: {integrity: sha512-ARDJmphmdvUk6Glw7y9DQ2bFkKBHwQHLi2lsaH6PPmz/Ka9sFOBsBluozhDltWmnv9u/cF6Rt87znRTPV+yp/A==}

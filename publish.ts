@@ -12,6 +12,7 @@ import mdInlineComment from 'markdown-it-inline-comments';
 import { full as mdEmoji } from 'markdown-it-emoji';
 import mdMermaid from 'markdown-it-mermaid';
 import mdContainer from 'markdown-it-container';
+import mdTableOfContents from 'markdown-it-table-of-contents';
 
 interface Document {
   title: string;
@@ -42,6 +43,10 @@ const md: MarkdownIt = new MarkdownIt({
   macros: { '\\RR': '\\mathbb{R}' },
 })
 .use(mdAnchor)
+.use(mdTableOfContents, {
+  includeLevel: [2, 3, 4],
+  listType: 'ol',
+})
 .use(mdContainer, 'TOGGLE', {
   validate(params: any) {
     return params.trim().match(/^TOGGLE\s+(.*)$/);

@@ -5,6 +5,12 @@ import path from 'path';
 
 import { publish, publish_with_path } from './publish';
 
+export interface Options {
+  title: string;
+  template: string;
+  toc_levels: number[];
+}
+
 const argv = yargs(process.argv.slice(2))
   .usage('Usage: $0 [FILE] [-o FILE] [-t NAME]')
   .example('$0 input.md -o output.html', 'Convert input.md to output.html.')
@@ -20,16 +26,32 @@ const argv = yargs(process.argv.slice(2))
     default: 'default',
     describe: 'Template name',
   })
+  .option('toc-min', {
+    type: 'number',
+    default: 2,
+    describe: 'Minimum heading level to include in the table of contents',
+  })
+  .option('toc-max', {
+    type: 'number',
+    default: 4,
+    describe: 'Maximum heading level to include in the table of contents',
+  })
   .help()
   .argv;
 
-let outputpath: string;
+let opath: string;
 if (argv['output']) {
-  outputpath = path.resolve(argv['output']);
+  opath = path.resolve(argv['output']);
 }
 
+const opts: Options = {
+  title: argv['output'] ? path.basename(argv['output']) : 'HTML Document',
+  template: argv['template'],
+  toc_levels: Array.from({ length: argv['toc-max'] - argv['toc-min'] + 1 }, (_, i) => argv['toc-min'] + i),
+};
+
 if (argv['_'].length > 0) {
-  publish_with_path(path.resolve(argv['_'][0]), outputpath, argv['template']);
+  publish_with_path(path.resolve(argv['_'][0]), opath, opts);
 } else {
   let input = '';
 
@@ -47,6 +69,6 @@ if (argv['_'].length > 0) {
       process.exit(1);
     }
 
-    publish(input, outputpath, argv['template']);
+    publish(input, opath, opts);
   });
 }

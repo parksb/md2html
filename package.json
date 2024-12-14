@@ -1,6 +1,6 @@
 {
   "name": "@parksb/md2html",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "",
   "main": "bin/md2html",
   "bin": {
@@ -11,7 +11,7 @@
     "url": "https://github.com/parksb/md2html"
   },
   "scripts": {
-    "build": "mkdir -p bin && esbuild index.ts --outfile=bin/md2html --platform=node --format=iife --bundle --minify",
+    "build": "mkdir -p bin && esbuild index.ts --outfile=bin/md2html --platform=node --format=iife --bundle --minify && tar -czvf md2html.tar.gz bin templates",
     "lint:type": "tsc --noEmit",
     "test": "exit 0"
   },

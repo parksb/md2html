@@ -9,6 +9,7 @@ export interface Options {
   title: string;
   template: string;
   toc_levels: number[];
+  html: boolean;
 }
 
 const argv = yargs(process.argv.slice(2))
@@ -36,6 +37,11 @@ const argv = yargs(process.argv.slice(2))
     default: 4,
     describe: 'Maximum heading level to include in the table of contents',
   })
+  .option('html', {
+    type: 'boolean',
+    default: false,
+    describe: 'Allow HTML in the input',
+  })
   .help()
   .argv;
 
@@ -48,6 +54,7 @@ const opts: Options = {
   title: argv['output'] ? path.basename(argv['output']) : 'HTML Document',
   template: argv['template'],
   toc_levels: Array.from({ length: argv['toc-max'] - argv['toc-min'] + 1 }, (_, i) => argv['toc-min'] + i),
+  html: argv['html'],
 };
 
 if (argv['_'].length > 0) {

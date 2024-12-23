@@ -55,7 +55,7 @@ export const publish = async (markdown: string, output: string, opts: Options) =
   const { template, toc_levels } = opts;
 
   const md: MarkdownIt = new MarkdownIt({
-    html: false,
+    html: opts.html,
     xhtmlOut: false,
     breaks: false,
     langPrefix: 'language-',

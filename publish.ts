@@ -24,12 +24,12 @@ interface Document {
 
 const template_path = async (name: string) => {
   try {
-    const tpath = path.join(os.homedir(), `.config/md2html/templates/${name}.ejs`)
+    const tpath = path.resolve(__dirname, `../templates/${name}.ejs`);
     await fs.access(tpath);
     return tpath;
   } catch (e) {
     try {
-      const tpath = path.resolve(__dirname, `../templates/${name}.ejs`);
+      const tpath = path.join(os.homedir(), `.config/md2html/templates/${name}.ejs`)
       await fs.access(tpath);
       return tpath;
     } catch (e) {

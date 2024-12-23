@@ -42,6 +42,7 @@ const argv = yargs(process.argv.slice(2))
     default: false,
     describe: 'Allow HTML in the input',
   })
+  .version('v0.0.8')
   .help()
   .argv;
 

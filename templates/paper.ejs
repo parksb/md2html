@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <title><%- document.title %></title>
 
-<head>
-  <meta charset="UTF-8" />
-  <title><%- document.title %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
 
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" as="style">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" as="style">
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
 
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css" as="style">
-  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
 
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.6.0/styles/github.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Noto+Serif+KR&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Noto+Serif+KR&family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-
-  <style>
+    <style>
     body { max-width: 900px; padding: 30px; word-break: keep-all; line-height: 1.7; font-family: 'Noto Serif KR', serif; font-size: 16px; }
     h1, h2, h3, h4, h5, h6 { font-weight: 800; }
     h1 { font-size: 1.6em; border-bottom: 1px solid #000000; }
@@ -52,14 +51,14 @@
     details > p { margin: 0; }
     details[open=""] > p { border-left: black 1px solid; padding-left: 15px; margin-left: 3.5px; }
     summary { cursor: pointer; width: fit-content; }
-  </style>
-</head>
+    </style>
+  </head>
 
-<body>
-  <%- document.html %>
-  <script type="module">
+  <body>
+    <%- document.html %>
+    <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
     mermaid.initialize({ startOnLoad: true });
-  </script>
-</body>
-
+    </script>
+  </body>
+</html>

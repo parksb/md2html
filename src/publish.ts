@@ -22,28 +22,40 @@ interface Document {
   html: string;
 }
 
-const template_path = async (name: string) => {
+const template_dir_path = async () => {
   try {
-    const tpath = path.resolve(__dirname, `../templates/${name}.ejs`);
+    const tpath = path.resolve(__dirname, `../templates`);
     await fs.access(tpath);
     return tpath;
   } catch (e) {
     try {
-      const tpath = path.join(os.homedir(), `.config/md2html/templates/${name}.ejs`)
+      const tpath = path.join(os.homedir(), `.config/md2html/templates`)
       await fs.access(tpath);
       return tpath;
     } catch (e) {
-      throw new Error(`Template not found: ${name}`);
+      throw new Error(`Template directory not found.`);
     }
   }
 };
 
+const template_path = async (name: string) => {
+  return path.join(await template_dir_path(), `${name}.ejs`);
+};
+
+export const templates = async () => {
+  const tpath = await template_dir_path();
+  const templates = (await fs.readdir(tpath)).map((t) => t.replace(/\.ejs$/, '')).join('\n');
+  process.stdout.write(`${tpath}\n${templates}`);
+};
+
 const document = (markdown: string, html: string, opts: Options): Document => {
-  if (!markdown.match(/^#\s.*/)) {
+  const title = markdown.match(/^#\s.*/);
+
+  if (!title) {
     return { title: opts.title, html };
   }
 
-  return { title: markdown.match(/^#\s.*/)[0].replace(/^#\s/, ''), html }
+  return { title: title[0].replace(/^#\s/, ''), html }
 };
 
 export const publish_with_path = async (input: string, output: string, opts: Options) => {

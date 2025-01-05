@@ -11,7 +11,8 @@
     "url": "https://github.com/parksb/md2html"
   },
   "scripts": {
-    "build": "mkdir -p bin && esbuild index.ts --outfile=bin/md2html --platform=node --format=iife --bundle --minify && tar -czvf md2html.tar.gz bin templates",
+    "start": "tsx src/index.ts",
+    "build": "mkdir -p bin && esbuild src/index.ts --outfile=bin/md2html --platform=node --format=iife --bundle --minify && tar -czvf md2html.tar.gz bin templates",
     "lint:type": "tsc --noEmit",
     "test": "exit 0"
   },
@@ -37,12 +38,13 @@
     "yargs": "^17.7.2"
   },
   "devDependencies": {
-    "typescript": "^5.4.4",
     "@types/ejs": "^3.1.5",
     "@types/katex": "^0.16.7",
     "@types/markdown-it": "^14.0.0",
     "@types/node": "^20.12.6",
-    "@types/yargs": "^17.0.32"
+    "@types/yargs": "^17.0.32",
+    "tsx": "^4.19.2",
+    "typescript": "^5.4.4"
   },
   "publishConfig": {
     "@parksb:registry": "https://npm.pkg.github.com"

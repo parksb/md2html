@@ -94,6 +94,6 @@ yargs(process.argv.slice(2))
     (yargs) => yargs,
     (_) => templates(),
   )
-  .version('v0.0.8')
+  .version('v0.0.9')
   .help()
   .argv;

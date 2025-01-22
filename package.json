@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/parksb/md2html"
+    "url": "git+https://github.com/parksb/md2html.git"
   },
   "scripts": {
     "start": "tsx src/index.ts",

@@ -39,7 +39,6 @@ const convert = (argv: Record<string, any>) => {
     });
 
     process.stdin.on('end', () => {
-      console.log(argv);
       if (input.length === 0) {
         console.error('No input received from stdin.');
         process.exit(1);
@@ -94,6 +93,6 @@ yargs(process.argv.slice(2))
     (yargs) => yargs,
     (_) => templates(),
   )
-  .version('v0.0.9')
+  .version('v0.0.10')
   .help()
   .argv;

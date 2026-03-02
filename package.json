@@ -21,11 +21,11 @@
   "license": "MIT",
   "dependencies": {
     "@markslides/markdown-it-mermaid": "^0.4.6",
-    "ejs": "^3.1.9",
+    "ejs": "^3.1.10",
     "esbuild": "^0.20.2",
-    "highlight.js": "^11.9.0",
-    "katex": "^0.16.10",
-    "markdown-it": "^14.1.0",
+    "highlight.js": "^11.11.1",
+    "katex": "^0.16.33",
+    "markdown-it": "^14.1.1",
     "markdown-it-anchor": "^8.6.7",
     "markdown-it-container": "^4.0.0",
     "markdown-it-emoji": "^3.0.0",
@@ -39,15 +39,15 @@
   },
   "devDependencies": {
     "@types/ejs": "^3.1.5",
-    "@types/katex": "^0.16.7",
-    "@types/markdown-it": "^14.0.0",
-    "@types/node": "^20.12.6",
-    "@types/yargs": "^17.0.32",
-    "tsx": "^4.19.2",
-    "typescript": "^5.4.4"
+    "@types/katex": "^0.16.8",
+    "@types/markdown-it": "^14.1.2",
+    "@types/node": "^20.19.35",
+    "@types/yargs": "^17.0.35",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3"
   },
   "publishConfig": {
     "@parksb:registry": "https://npm.pkg.github.com"
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "pnpm@10.30.3+sha512.c961d1e0a2d8e354ecaa5166b822516668b7f44cb5bd95122d590dd81922f606f5473b6d23ec4a5be05e7fcd18e8488d47d978bbe981872f1145d06e9a740017"
 }

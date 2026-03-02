@@ -1,6 +1,6 @@
 {
   "name": "@parksb/md2html",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "",
   "main": "bin/md2html",
   "bin": {
@@ -20,6 +20,7 @@
   "author": "parksb <parkgds@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@markslides/markdown-it-mermaid": "^0.4.6",
     "ejs": "^3.1.9",
     "esbuild": "^0.20.2",
     "highlight.js": "^11.9.0",
@@ -31,7 +32,6 @@
     "markdown-it-footnote": "^4.0.0",
     "markdown-it-image-lazy-loading": "^2.0.1",
     "markdown-it-inline-comments": "^1.0.1",
-    "markdown-it-mermaid": "^0.2.5",
     "markdown-it-table-of-contents": "^0.6.0",
     "markdown-it-task-checkbox": "^1.0.6",
     "markdown-it-texmath": "^1.0.0",

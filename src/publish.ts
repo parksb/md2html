@@ -11,7 +11,7 @@ import mdTex from 'markdown-it-texmath';
 import mdAnchor from 'markdown-it-anchor';
 import mdInlineComment from 'markdown-it-inline-comments';
 import { full as mdEmoji } from 'markdown-it-emoji';
-import mdMermaid from 'markdown-it-mermaid';
+import mdMermaid from '@markslides/markdown-it-mermaid';
 import mdContainer from 'markdown-it-container';
 import mdTableOfContents from 'markdown-it-table-of-contents';
 
